@@ -44,7 +44,8 @@ public class ClientControll {
 		String user = interact.getStringInput("What is the username you would like to use on "+this.serverName+"?");
 		//String pass = interact.getStringInput("What is your password for "+this.serverName+"?");
 		//LogIn(user, pass)
-		LogIn(user)
+		ChatSession l = new ChatSession(user);
+		chats.add(l);
 	}
 	
 	
