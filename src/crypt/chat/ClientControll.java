@@ -21,7 +21,7 @@ public class ClientControll {
 	}
 	public void setServerName(String name)
 	{
-		serverName=name;
+		String serverName = name;
 	}
 	public static void main(String args)
 	{
