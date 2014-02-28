@@ -1,5 +1,7 @@
 package crypt.chat;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
 import java.util.Scanner;
 /*
@@ -23,6 +25,32 @@ public class ChatSession {
 		this.serverName = serverName;
 	}
 	
+	public String receive(){
+		
+		InputStream i;
+		try {
+			i = this.client.getInputStream();
+		} catch (IOException e1) {
+			return "false";
+		}
+		
+		byte[] buffer = new byte[100];
+		try {
+			i.read(buffer);
+		} catch (IOException e) {
+			return "false";
+		}
+		try {
+			i.close();
+		} catch (IOException e) {
+			return "false";
+		}
+		
+		String data = new String(buffer);
+		return data;
+		// if no new data, string = "false", else "data"
+	}
+	
 	public void logIn(){
 		
 		System.out.println("Please input your username");
@@ -37,8 +65,6 @@ public class ChatSession {
 				break;
 			}
 		}
-		
-		
 		
 		System.out.println("Please input your password");
 		password = input.nextLine().trim();
