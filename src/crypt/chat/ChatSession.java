@@ -17,6 +17,7 @@ public class ChatSession {
 	private String password;
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ChatSession(Socket s,  String server, String user, String pass)
 	{
 		this.client = s;
@@ -40,6 +41,8 @@ public class ChatSession {
 		
 	}
 =======
+=======
+>>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
 	private boolean inputtingLogIn = true;
 	
 	public ChatSession(Socket client, String serverName){
@@ -95,6 +98,9 @@ public class ChatSession {
 	}
 	
 	
+<<<<<<< HEAD
+>>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
+=======
 >>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
 }
 
