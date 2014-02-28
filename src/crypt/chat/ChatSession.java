@@ -51,26 +51,12 @@ public class ChatSession {
 		// if no new data, string = "false", else "data"
 	}
 	
-	public void logIn(){
+	public String logIn(){
 		
 		System.out.println("Please input your username");
 		username = input.nextLine().trim();
-		
-		while (inputtingLogIn){
-			
-			if (username.equals(null) || username.trim().length() == 0){
-				System.out.println("Please input ");
-				
-			} else{
-				break;
-			}
-		}
-		
-		System.out.println("Please input your password");
-		password = input.nextLine().trim();
-	}
-	
-	
+		return username;
+	}	
 }
 
 
