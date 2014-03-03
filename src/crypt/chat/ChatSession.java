@@ -18,7 +18,7 @@ public class ChatSession {
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
-	ChatSession(Socket s,  String server, String user, String pass)
+	ChatSession( String server, String user, String pass)
 	{
 		this.client = s;
 		this.serverName = server;
@@ -36,7 +36,7 @@ public class ChatSession {
 	protected boolean sendChat(String message)
 	{
 		//sends stuff to output stream
-		this.client.getInputStream();
+		this.client.getOutputStream();
 		
 		
 	}
