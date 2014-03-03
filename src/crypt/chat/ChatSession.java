@@ -16,6 +16,33 @@ public class ChatSession {
 	private String username;
 	private String password;
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
+	ChatSession(Socket s,  String server, String user, String pass)
+	{
+		this.client = s;
+		this.serverName = server;
+		this.username=user;
+		this.password=pass;		
+	}
+	
+	protected boolean logIn(String user, String pass)
+	{
+		
+		//returns false if login fails
+		//rturn true if login suceeds
+	}
+	
+	protected boolean sendChat(String message)
+	{
+		//sends stuff to output stream
+		this.client.getInputStream();
+		
+		
+	}
+=======
+=======
+>>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
 	private boolean inputtingLogIn = true;
 	
 	public ChatSession(Socket client, String serverName){
@@ -55,8 +82,31 @@ public class ChatSession {
 		
 		System.out.println("Please input your username");
 		username = input.nextLine().trim();
+<<<<<<< HEAD
 		return username;
 	}	
+=======
+		
+		while (inputtingLogIn){
+			
+			if (username.equals(null) || username.trim().length() == 0){
+				System.out.println("Please input ");
+				
+			} else{
+				break;
+			}
+		}
+		
+		System.out.println("Please input your password");
+		password = input.nextLine().trim();
+	}
+	
+	
+<<<<<<< HEAD
+>>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
+=======
+>>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
+>>>>>>> 3bcc21ff5be05543e4692d3a1cc5b1ba1a6b9c29
 }
 
 

@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ClientControll {
-	private int defaultPort = 783;
+	private int defaultPort = 1995;
 	private ArrayList<ChatSession> chats = new ArrayList<ChatSession>();
 	
 	public void sendObject(Object objectToSend)
@@ -38,13 +38,12 @@ public class ClientControll {
 		 * client = new Socket(ip, userDefinedPort);
 		 */
 		client = new Socket(ip, defaultPort);
-		Listen l = new Listen();
-		Thread(Runnable l, "I hear you!");
+		
 		
 		String user = interact.getStringInput("What is the username you would like to use on "+this.serverName+"?");
 		//String pass = interact.getStringInput("What is your password for "+this.serverName+"?");
 		//LogIn(user, pass)
-		ChatSession l = new ChatSession(user);
+		ChatSession l = new ChatSession(client, user);
 		chats.add(l);
 	}
 	
