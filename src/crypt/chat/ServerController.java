@@ -75,7 +75,7 @@ public class ServerController {
 	
 	private static void listen() {
 		if (!threadExists) {
-			new Thread(new ChatInstance()).start();
+			new Thread(new ListenThread()).start();
 			threadExists = true;
 		}
 	}

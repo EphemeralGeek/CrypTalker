@@ -33,10 +33,10 @@ public class ChatSession {
 		//rturn true if login suceeds
 	}
 	
-	protected boolean sendChat(String message)
+	protected void sendChat(String message)
 	{
 		//sends stuff to output stream
-		this.client.getInputStream();
+		this.client.getOutputStream().write(message.getBytes());
 		
 		
 	}
