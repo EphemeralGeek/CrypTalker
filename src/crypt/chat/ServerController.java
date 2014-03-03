@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.Socket;
+import java.net.*;
 import java.util.ArrayList;
 
 
@@ -32,7 +32,11 @@ public class ServerController {
 				e.printStackTrace();
 			}
 			
-			System.out.println("running on IP: " + InetAddress.getLocalHost().getHostAddress() +  "...");
+			try {
+				System.out.println("running on IP: " + InetAddress.getLocalHost().getHostAddress() +  "...");
+			} catch (UnknownHostException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 

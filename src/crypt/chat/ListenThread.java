@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
-public class ChatInstance implements Runnable{
+public class ListenThread implements Runnable{
 
 	@Override
 	public void run() {
