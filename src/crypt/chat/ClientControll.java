@@ -5,11 +5,12 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ClientControll {
 	private int defaultPort = 1995;
 	private ArrayList<ChatSession> chats = new ArrayList<ChatSession>();
-	
+
 	public void sendObject(Object objectToSend)
 	{
 		//code a serialization method
@@ -38,20 +39,26 @@ public class ClientControll {
 		 * client = new Socket(ip, userDefinedPort);
 		 */
 		client = new Socket(ip, defaultPort);
-		
-		
+
+
 		String user = interact.getStringInput("What is the username you would like to use on "+this.serverName+"?");
 		//String pass = interact.getStringInput("What is your password for "+this.serverName+"?");
 		//LogIn(user, pass)
 		ChatSession l = new ChatSession(client, user);
 		chats.add(l);
+		Scanner scan = new Scanner(System.in);
+		for(int i-0; i<30; i++)
+		{
+			String chat = scan.nextLine();
+			chats.get(0).sendChat(chat);
+		}
 	}
-	
-	
+
+
 	//authenticates with the server
 	PrintStream myPS = new PrintStream(client.getOutputStream());
 	myPS.println("Hello server");
-	
+
 	BufferedReader reader = new BufferedReader(new InputStreamReader(client.getInputStream()));
 	String temp = reader.readLine();
 	if(temp.equals("Got something"))

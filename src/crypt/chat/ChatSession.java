@@ -33,10 +33,14 @@ public class ChatSession {
 		//rturn true if login suceeds
 	}
 	
-	protected boolean sendChat(String message)
+	protected void sendChat(String message)
 	{
 		//sends stuff to output stream
+<<<<<<< HEAD
 		this.client.getOutputStream();
+=======
+		this.client.getOutputStream().write(message.getBytes());
+>>>>>>> 3c3ecc3b89bbc8cbbad34d88576af9d334fa87cf
 		
 		
 	}
@@ -78,10 +82,14 @@ public class ChatSession {
 		// if no new data, string = "false", else "data"
 	}
 	
-	public void logIn(){
+	public String logIn(){
 		
 		System.out.println("Please input your username");
 		username = input.nextLine().trim();
+<<<<<<< HEAD
+		return username;
+	}	
+=======
 		
 		while (inputtingLogIn){
 			
@@ -102,6 +110,7 @@ public class ChatSession {
 >>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
 =======
 >>>>>>> cc38c0fb5191a57254a9c706ea1836814128e1f4
+>>>>>>> 3bcc21ff5be05543e4692d3a1cc5b1ba1a6b9c29
 }
 
 

@@ -32,7 +32,7 @@ public class ServerController {
 				e.printStackTrace();
 			}
 			
-			System.out.println("we have hit an impass...");
+			System.out.println("running on IP: " + InetAddress.getLocalHost().getHostAddress() +  "...");
 		}
 	}
 
@@ -75,7 +75,7 @@ public class ServerController {
 	
 	private static void listen() {
 		if (!threadExists) {
-			new Thread(new ChatInstance()).start();
+			new Thread(new ListenThread()).start();
 			threadExists = true;
 		}
 	}
